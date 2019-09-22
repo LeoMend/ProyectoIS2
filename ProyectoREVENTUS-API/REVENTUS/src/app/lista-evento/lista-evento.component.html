@@ -1,0 +1,29 @@
+<div class="main-content">
+  <div class="container-fluid">
+  <div class="card">
+  <div class="card-header card-header-danger">
+    <h2 class="card-title">Listado Eventos Activos</h2>
+    <p class="card-category">Seleccion Evento Al cual Desea Calificar</p>
+  </div>
+  <div class="card-body">
+  <div id="typography">
+  <div class="card-title">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let indexEvento of obtenerDatosEventoActivo, index as i">
+
+   <h3 >Nombre De Evento:  {{indexEvento.eventoNombre}}</h3>
+   <h5 >Fecha De Evento:  {{indexEvento.eventoFecha}}</h5>
+   <!--<h5>
+   <a [routerLink]="['/lista-equipo',indexEvento.eventoId]" >  >>>Ver Equipos Inscritos en Evento...>>></a>
+  </h5>-->
+   <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/lista-equipo',indexEvento.eventoId]" >Ver Equipos Inscritos En Evento</button>
+    </div>
+      </li>
+        </ul>
+   </div>
+   
+   </div>
+   </div>
+   </div>
+</div>

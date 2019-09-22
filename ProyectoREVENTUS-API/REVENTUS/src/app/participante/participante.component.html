@@ -1,0 +1,62 @@
+<div class="main-content">
+  <div class="container-fluid">
+  <div class="row">
+      <div class="col-md-8">
+      <div class="card">
+      <div class="card-header card-header-danger">
+          <h4 class="card-title">Registrar Participante</h4>
+          <p class="card-category">Complete la informacion correspondiente al Participante.</p>
+      </div>
+      <div class="card-body">
+                            <form [formGroup]="FormularioGuardar"(submit)="onSubmit(FormularioGuardar.value)">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Nombre Completo Participante" type="text" formControlName="participanteNombre" >
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 mt-2">
+                                    <label>Listado Carrera</label>
+                                    <select class="form-control form-control-lg" formControlName="carrera_Id">
+                                      <option *ngFor="let indexCarrera of obtenerDatosCarrera" [value]="indexCarrera.carreraId"
+                                      >{{indexCarrera.carreraNombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 mt-4">
+                                    <label>Listado Equipo</label>
+                                    <select class="form-control form-control-lg" formControlName="equipo_Id">
+                                    <option *ngFor="let indexEquipo of obtenerDatosEquipo" [value]="indexEquipo.equipoId"
+                                    >{{indexEquipo.equipopNombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                          
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" [disabled]="FormularioGuardar.invalid">Guardar Participante</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="javascript:void(0)">
+                            <img src="/assets/img/reventus_logo.png"/>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-gray">Christian Mendoza / Cofundador - REVENTUS S.A</h6>
+                        <h4 class="card-title">REVENTUS</h4>
+                        <p class="card-description">
+                          No hay absolutamente ninguna otra forma de triunfar en la vida si no es por el constante esfuerzo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

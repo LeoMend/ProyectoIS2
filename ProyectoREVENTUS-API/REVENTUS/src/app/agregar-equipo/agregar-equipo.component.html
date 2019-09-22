@@ -1,0 +1,57 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+  <div class="row">
+      <div class="col-md-8">
+      <div class="card">
+      <div class="card-header card-header-danger">
+          <h4 class="card-title">Registrar Equipo</h4>
+          <p class="card-category">Complete la informacion del equipo para el evento.</p>
+      </div>
+      <div class="card-body">
+                            <form [formGroup]="FormularioGuardar"(submit)="onSubmit(FormularioGuardar.value)">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Nombre Equipo" type="text" formControlName="equipopNombre">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                           
+                            <div class="row">
+                                <div class="col-md-5 mt-4">
+                                    <label>Evento</label>
+                                    <select class="form-control form-control-lg" formControlName="evento_Id">
+                                      <option *ngFor="let indexEvento of obtenerDatosEvento" [value]="indexEvento.eventoId"
+                                      >{{indexEvento.eventoNombre}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                          
+                                        <button mat-raised-button type="submit" class="btn btn-danger pull-right" [disabled]="FormularioGuardar.invalid">Guardar Equipo</button>
+                                        
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="javascript:void(0)">
+                            <img src="/assets/img/reventus_logo.png"/>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-gray">Jorge Alvarenga / Cofundador - REVENTUS S.A</h6>
+                        <h4 class="card-title">REVENTUS</h4>
+                        <p class="card-description">
+                           El talento gana partidos, pero el trabajo en equipo y la inteligencia gana campeonatos
+                        </p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,64 @@
+<div class="main-content">
+  <div class="container-fluid">
+  <div class="row">
+      <div class="col-md-8">
+      <div class="card">
+      <div class="card-header card-header-danger">
+          <h4 class="card-title">Registrar Evento</h4>
+          <p class="card-category">Complete la informacion correspondiente al Evento.</p>
+      </div>
+      <div class="card-body">
+                            <form [formGroup]="FormularioGuardar"(submit)="onSubmit(FormularioGuardar.value)">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Nombre Evento" type="text" formControlName="eventoNombre">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 mt-2">
+                                  <label>Fecha Evento</label>
+                                      <label for="example-datetime-local-input" class="col-2 col-form-label"></label>
+                                      <div>
+                                        <input class="form-control" type="datetime-local" id="example-datetime-local-input" formControlName="eventoFecha">
+                                      </div>
+                              </div>
+                          </div>
+                            <div class="row">
+                                <div class="col-md-5 mt-4">
+                                    <label>Estado Tipo</label>
+                                    <select class="form-control form-control-lg"  formControlName="catalogoEstado_Id">
+                                      <option *ngFor="let indexCatalogoEstado of obtenerCatalogoEstado" [value]="indexCatalogoEstado.catalogoEstadoId"
+                                      >{{indexCatalogoEstado.catalogoEstadoNombre}}
+                                  </option>
+                                    </select>
+                                </div>
+                            </div>
+                          
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right"[disabled]="FormularioGuardar.invalid">Guardar Evento</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="javascript:void(0)">
+                            <img src="/assets/img/reventus_logo.png"/>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-category text-gray">Joan Espinal / Cofundador - REVENTUS S.A</h6>
+                        <h4 class="card-title">REVENTUS</h4>
+                        <p class="card-description">
+                           Cada Evento es unico e irrepetible. Aprovechalo para crear experiencias inolvidable
+                        </p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
